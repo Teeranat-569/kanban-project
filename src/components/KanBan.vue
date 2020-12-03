@@ -14,6 +14,9 @@
         <div class="create-task" @click="create_task(index)">Create Task</div>
       </div>
     </div>
+    <b-modal ref="create-task-modal" title="Create Task">
+      <p class="my-4">Hello from modal!</p>
+    </b-modal>
   </div>
 </template>
 
@@ -22,11 +25,12 @@ export default {
   props: {
     data: Array,
   },
-  methods:{
-      create_task(index_column){
-          alert(index_column)
-      }
-  }
+  methods: {
+    create_task(index_column) {
+        console.log(index_column);
+      this.$refs["create-task-modal"].show()
+    },
+  },
 };
 </script>
 
@@ -70,8 +74,8 @@ export default {
   color: white;
   cursor: pointer;
 }
-.create-task:hover{
-    background-color: rgb(255, 255, 255);
-    color: black;
+.create-task:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 </style>
