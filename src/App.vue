@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <KanBan />
+    <KanBan :data="data" />
   </div>
 </template>
 
@@ -12,6 +12,27 @@ export default {
   components: {
     KanBan,
   },
+  data(){
+    return {
+      data:[
+        {
+          name :"todo",
+          color:"#F4B58E",
+          tasks:[]
+        },
+        {
+          name :"doing",
+          color:"#F363B1",
+          tasks:[]
+        },
+        {
+          name :"done",
+          color:"#FF9420",
+          tasks:[]
+        }
+      ]
+    }
+  }
 };
 </script>
 
